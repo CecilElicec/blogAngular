@@ -25,7 +25,7 @@ export class ArticlesService {
         return this.http.get(`http://localhost:8080/rest/articles/${id}`);
     }
 
-    public updateArticle(id, body) {
-        return this.http.put(`http://localhost:8080/rest/articles/${id}`, body);
+    public updateArticle(data) {
+        return this.http.put(`http://localhost:8080/rest/articles/${data.id}`, data);
     }
 }
