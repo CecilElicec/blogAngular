@@ -1,0 +1,18 @@
+<section id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h2>{{detail?.title}}</h2>
+                <button type="submit" class="btn btn-primary" [routerLink]="['/edit', detail.id]">Modifier</button>
+                <p class="lead">{{detail?.content}}</p>
+                <h3>Commentaires</h3>
+                <ul class="list-group" *ngIf="detail?.comments && detail?.comments.length > 0">
+                    <li class="list-group-item active" *ngFor="let comment of detail.comments"><strong>{{comment?.username}}</strong>
+                        <p>{{comment?.content}}</p>
+                    </li>
+                </ul>
+                <p *ngIf="detail?.comments.length == 0">Aucun commentaire. Soyez le premier à laisser votre avis !</p>
+            </div>
+        </div>
+    </div>
+</section>
