@@ -16,6 +16,9 @@ export class DetailComponent implements OnInit {
     public content: string;
     public comments: any;
 
+    public commentaire: string;
+    public pseudo: string;
+
     constructor(private articlesService: ArticlesService, private route: ActivatedRoute, public router: Router) { }
 
     ngOnInit() {
@@ -39,5 +42,27 @@ export class DetailComponent implements OnInit {
             console.log('error', error);
             return error;
         };
+    }
+
+    public addComment() {
+        console.log(this.pseudo);
+        console.log(this.commentaire);
+
+        if (this.pseudo && this.commentaire) {
+            const body = {
+                'username': this.pseudo,
+                'content': this.commentaire
+            }
+            this.articlesService.postComment(this.detail.id, body).subscribe((response)=>{
+                console.log('success');
+                location.reload();
+            }), (error) => {
+                console.log('error', error);
+                return error;
+            };
+        }
+        else {
+            console.log('Euhoh');
+        }
     }
 }

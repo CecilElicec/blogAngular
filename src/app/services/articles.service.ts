@@ -54,7 +54,7 @@ export class ArticlesService {
     }
 
     public postComment(id,data){
-        return this.http.post(`http://localhost:8080/rest/articles/${id}/comment`, data);
+        return this.http.post(`http://localhost:8080/rest/articles/${id}/comments`, data);
     }
 
     public postArticle(data){

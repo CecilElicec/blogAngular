@@ -13,6 +13,18 @@
                     </li>
                 </ul>
                 <p *ngIf="detail?.comments.length == 0">Aucun commentaire. Soyez le premier à laisser votre avis !</p>
+                <form>
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Pseudo</label>
+                          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Mon pseudo" name="pseudo" [(ngModel)]="pseudo">
+                          <small id="emailHelp" class="form-text text-muted">Nigel</small>
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputPassword1">Commentaire</label>
+                          <textarea class="form-control" id="exampleInputPassword1" placeholder="Commentaire" name="commentaire" [(ngModel)]="commentaire"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" (click)="addComment()" >Submit</button>
+                      </form>
             </div>
         </div>
     </div>
