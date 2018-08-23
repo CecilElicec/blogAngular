@@ -28,4 +28,36 @@ export class ArticlesService {
     public updateArticle(data) {
         return this.http.put(`http://localhost:8080/rest/articles/${data.id}`, data);
     }
+
+    public deleteArticleById(id) {
+        return this.http.delete(`http://localhost:8080/rest/articles/${id}`);
+    }
+
+    public postCategorie(data){
+        return this.http.post(`http://localhost:8080/rest/categories`, data);
+    }
+
+    public updateCategorieById(data){
+        return this.http.put(`http://localhost:8080/rest/categories/${data.id}`, data);
+    }
+
+    public deleteCategorieById(data){
+        return this.http.delete(`http://localhost:8080/rest/categories/${data.id}`);
+    }
+
+    public getCategorieById(id){
+        return this.http.get(`http://localhost:8080/rest/categories/${id}`);
+    }
+
+    public getCategories(){
+        return this.http.get(`http://localhost:8080/rest/categories`);
+    }
+
+    public postComment(id,data){
+        return this.http.post(`http://localhost:8080/rest/articles/${id}/comment`, data);
+    }
+
+    public postArticle(data){
+        return this.http.post(`http://localhost:8080/rest/articles`, data);
+    }
 }

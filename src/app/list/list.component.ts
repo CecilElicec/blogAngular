@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { ArticlesService } from '../services/articles.service';
+import { ActivatedRoute, ActivatedRouteSnapshot, Router } from '@angular/router';
 
 @Component({
     selector: 'app-list',
@@ -10,7 +11,7 @@ export class ListComponent implements OnInit {
 
     public articles: any;
 
-    constructor(private articlesService: ArticlesService) { }
+    constructor(private articlesService: ArticlesService, private router: Router) { }
 
     ngOnInit() {
         this.articlesService.getArticles().subscribe((response)=> {
@@ -20,6 +21,10 @@ export class ListComponent implements OnInit {
             console.log('error',error);
             return error;
         };
+     }
+
+     public addArticle(){
+        this.router.navigate([`/add`]);
      }
 
 }

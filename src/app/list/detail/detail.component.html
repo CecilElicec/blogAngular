@@ -4,6 +4,7 @@
             <div class="col-lg-8 mx-auto">
                 <h2>{{detail?.title}}</h2>
                 <button type="submit" class="btn btn-primary" [routerLink]="['/edit', detail.id]">Modifier</button>
+                <button type="submit" class="btn btn-primary" (click)="deleteArticle()">Supprimer</button>
                 <p class="lead">{{detail?.content}}</p>
                 <h3>Commentaires</h3>
                 <ul class="list-group" *ngIf="detail?.comments && detail?.comments.length > 0">

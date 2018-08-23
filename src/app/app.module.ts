@@ -15,8 +15,10 @@ import { ArticlesService } from './services/articles.service';
 import { TruncatePipe } from './pipes/truncate.pipe';
 
 const appRoutes: Routes = [
+  { path: '', component: ListComponent },
   { path: 'list', component: ListComponent },
   { path: 'detail/:id', component: DetailComponent },
+  { path: 'add', component: AdminArticleComponent },
   { path: 'edit/:id', component: AdminArticleComponent }
 ];
 
